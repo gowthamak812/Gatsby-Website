@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <style>
+        .btn {
+            margin: 10px;
+            font-size: 30px;
+            width: 69px;
+        }
+
+        #inp {
+
+            width: 345px;
+            height: 60px;
+            font-size: 20px;
+            border-color: blue;
+            border-width: 7px;
+            text-align: center;
+
+        }
+
+        .butt {
+            border: 5px solid blue;
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <div>
+            <h1> Bootstrap Calculator </h1>
+            <div>
+                <input readonly id="inp" type="text">
+            </div>
+            <div class="btn-group butt">
+                <div class="row row-no-gutters"> <br>
+                    <button class="btn btn-lg btn-warning" onclick="myFunction(this)">7</button>
+                    <button class="btn btn-lg btn-success" onclick="myFunction(this)">8</button>
+                    <button class="btn btn-lg btn-info" onclick="myFunction(this)">9</button>
+                    <button class="btn btn-lg btn-danger" onclick="cancel(this)">⌫</button>
+                </div>
+                <div class="row row-no-gutters">
+                    <button class="btn btn-lg btn-info" onclick="myFunction(this)">4</button>
+                    <button class="btn btn-lg btn-warning" onclick="myFunction(this)">5</button>
+                    <button class="btn btn-lg btn-success" onclick="myFunction(this)">6</button>
+                    <button class="btn btn-lg btn-danger" onclick="myFunction(this)">-</button>
+                </div>
+                <div class="row row-no-gutters">
+                    <button class="btn btn-lg btn-success" onclick="myFunction(this)">1</button>
+                    <button class="btn btn-lg btn-info" onclick="myFunction(this)">2</button>
+                    <button class="btn btn-lg btn-warning" onclick="myFunction(this)">3</button>
+                    <button class="btn btn-lg btn-danger" onclick="myFunction(this)">*</button>
+                </div>
+                <div class="row row-no-gutters">
+                    <button class="btn btn-lg btn-danger" onclick="myFunction(this)">0</button>
+                    <button class="btn btn-lg btn-danger" onclick="myFunction(this)">.</button>
+                    <button class="btn btn-lg btn-danger" onclick="myFunction(this)">+</button>
+                    <button class=" btn btn-lg btn-danger" onclick="equal()">=</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var result = document.getElementById("inp");
+
+        function myFunction(v) {
+
+            var num = v.innerHTML;
+            result.value += num;
+        }
+        function cancel() {
+
+            result.value = result.value.substr(0, result.value.length - 1);
+        }
+        function equal() {
+
+            result.value = eval(result.value);
+        }
+
+    </script>
+</body>
+
+</html>
